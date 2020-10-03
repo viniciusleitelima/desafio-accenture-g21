@@ -4,14 +4,14 @@ import { Injectable } from '@nestjs/common';
 export class AppService {
 
   dictionary: Object = {
-    1: ["A", "B", "C"],
-    2: ["D", "E", "F"],
-    3: ["G", "H", "I"],
-    4: ["J", "K", "L"],
-    5: ["M", "N", "O"],
-    6: ["P", "Q", "R", "S"],
-    7: ["T", "U", "V"],
-    8: ["W", "X", "Y", "Z"]
+    2: ["A", "B", "C"],
+    3: ["D", "E", "F"],
+    4: ["G", "H", "I"],
+    5: ["J", "K", "L"],
+    6: ["M", "N", "O"],
+    7: ["P", "Q", "R", "S"],
+    8: ["T", "U", "V"],
+    9: ["W", "X", "Y", "Z"]
   };
 
   async traducaoMsg(body: any): Promise<string> {
@@ -22,8 +22,8 @@ export class AppService {
   
     for(var i in msgSplit){
       if(
-        (msgSplit[i] === 1) &&
-        (msgSplit[i+1] === msgSplit)
+        (msgSplit[i] === 2) &&
+        (msgSplit[i] === msgSplit[i+1])
         ){
 
       }
