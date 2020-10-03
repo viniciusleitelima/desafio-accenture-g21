@@ -1,4 +1,4 @@
-import { Body, Controller, Get } from '@nestjs/common';
+import { Body, Controller, Post } from '@nestjs/common';
 import { AppService } from './app.service';
 import { MsgRequest } from './model/app.model';
 
@@ -6,7 +6,7 @@ import { MsgRequest } from './model/app.model';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('/traducaoMsg')
+  @Post('/traducaoMsg')
   async traducaoMsg(
     @Body() msgRequest: MsgRequest,
   ): Promise<any> {
