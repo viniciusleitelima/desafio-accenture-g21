@@ -5,7 +5,7 @@ export class AppService {
 
 
   dicionario: Object = {
-    0: " ",
+    _:" ",
     2 : "A",
     22 : "B",
     222 : "C",
@@ -44,7 +44,7 @@ export class AppService {
     for(var i = 0; i <= msgSplit.length; i++){
       const nextIndex = i + 1;
       let index;
-      if(msgSplit[i] === "0"){
+      if(msgSplit[i] === "_"){
         if ((msgSplit[i + 1] === msgSplit[i]) && (msgSplit[i + 2] === msgSplit[i])) 
         {
           index = msgSplit[i] + msgSplit[i + 1] + msgSplit[i + 2];
@@ -173,8 +173,7 @@ export class AppService {
           } 
       
     } 
-    console.log(msgRetorno.join(""));
-    return "ok";
+    return msgRetorno.join("");
   }
 
 }

@@ -1,6 +1,7 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 import { MsgRequest } from './model/app.model';
+import { Response } from 'express';
 
 @Controller()
 export class AppController {
@@ -9,10 +10,13 @@ export class AppController {
   @Post('/traducaoMsg')
   async traducaoMsg(
     @Body() msgRequest: MsgRequest,
+    @Res() response: Response,
   ): Promise<any> {
     const msgTraduzida = await this.appService.traducaoMsg(msgRequest);
-    return {
-      msgTraduzida
-    };
+    
+    response.status(200).json({
+      msg:msgTraduzida
+    });
+    return;
   }
 }
