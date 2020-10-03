@@ -1,5 +1,6 @@
 import { Body, Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
+import { MsgRequest } from './model/app.model';
 
 @Controller()
 export class AppController {
@@ -7,10 +8,9 @@ export class AppController {
 
   @Get('/traducaoMsg')
   async traducaoMsg(
-    @Body() msgRequest: any,
+    @Body() msgRequest: MsgRequest,
   ): Promise<any> {
     const msgTraduzida = await this.appService.traducaoMsg(msgRequest);
-    
     return {
       msgTraduzida
     };
